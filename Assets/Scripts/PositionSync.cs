@@ -16,6 +16,8 @@ public class PositionSync : MonoBehaviour, IPunObservable
     private Camera ARCamera;
     private PhotonView PhotonView;
 
+    private Vector3 ImageTargetVector;
+
     public bool isPerson;
 
     // Start is called before the first frame update
@@ -32,6 +34,8 @@ public class PositionSync : MonoBehaviour, IPunObservable
         networkScale = LocalScale;
         networkRotation = LocalRotation;
 
+        ImageTargetVector = GetMyTargetPosition();
+
         Debug.Log(LocalPosition);
         Debug.Log(LocalScale);
         Debug.Log(LocalRotation);
@@ -43,14 +47,14 @@ public class PositionSync : MonoBehaviour, IPunObservable
         if (stream.IsWriting)
         {
 
-            Debug.Log("ISWriting");
+            Debug.Log("Sending mine");
 
-            stream.SendNext(transform.position);
+            stream.SendNext(MyPositionFromTarget());
             stream.SendNext(transform.rotation);
         }
         else
         {
-            Debug.Log("Else");
+            Debug.Log("Receiving others");
             networkPosition = (Vector3)stream.ReceiveNext();
             networkRotation = (Quaternion)stream.ReceiveNext();
         }
@@ -62,7 +66,7 @@ public class PositionSync : MonoBehaviour, IPunObservable
         {
             Debug.Log("IsNotMine");
 
-            transform.localPosition = networkPosition;
+            transform.localPosition = calcNewNetworkPos(networkPosition);
             transform.localRotation = networkRotation;
 
             Debug.Log(networkPosition);
@@ -80,9 +84,28 @@ public class PositionSync : MonoBehaviour, IPunObservable
         }
     }
 
-    void CalculatePosition()
+    private Vector3 GetMyTargetPosition()
     {
+        var imageTarget = GameObject.Find("ImageTarget");
+        var targetTransform = imageTarget.GetComponent<Transform>();
+        Vector3 targetPosition = targetTransform.position;
+        Debug.Log("TargetPosition: " + targetPosition);
+        return targetPosition;
+    }
 
+    private Vector3 MyPositionFromTarget()
+    {
+        Vector3 newVector = ImageTargetVector - ARCamera.transform.position;
+        Debug.Log("PositionFromTarget: " + newVector);
+        return newVector;
+    }
+
+    private Vector3 calcNewNetworkPos(Vector3 RecievedVector)
+    {
+        Vector3 normalisedVector = ImageTargetVector - RecievedVector;
+        Debug.Log("Normalised: " + normalisedVector);
+
+        return normalisedVector;
     }
 
 }

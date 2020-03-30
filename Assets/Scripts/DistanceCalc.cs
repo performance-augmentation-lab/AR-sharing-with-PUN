@@ -27,7 +27,6 @@ public class DistanceCalc : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not Tracking");
         }
     }
 

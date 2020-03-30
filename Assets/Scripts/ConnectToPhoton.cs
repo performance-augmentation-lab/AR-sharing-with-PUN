@@ -22,18 +22,11 @@ namespace com.Avinash.AR_Sharing
         {
         }
 
-        public void Connect()
+        public void ConnectToLobby()
         {
-            if (PhotonNetwork.IsConnected)
-            {
-                Debug.Log("Connecting");
-                PhotonNetwork.JoinRandomRoom();
-            }
-            else
-            {
-                PhotonNetwork.ConnectUsingSettings();
-                PhotonNetwork.GameVersion = gameVersion;
-            }
+            PhotonNetwork.ConnectUsingSettings();
+            PhotonNetwork.GameVersion = gameVersion;
+            SceneManager.LoadScene("TestScene", LoadSceneMode.Single);
         }
 
         public override void OnConnectedToMaster()
