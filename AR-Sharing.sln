@@ -93,6 +93,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.MixedReality.Tool
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.MixedReality.Toolkit.Services.InputSystem.Editor", "Microsoft.MixedReality.Toolkit.Services.InputSystem.Editor.csproj", "{E167D1AC-0636-3854-4D82-E9960D78030A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests.csproj", "{3AC6C44B-7DBB-8455-6971-67E35A7C3759}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -283,6 +285,10 @@ Global
 		{E167D1AC-0636-3854-4D82-E9960D78030A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E167D1AC-0636-3854-4D82-E9960D78030A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E167D1AC-0636-3854-4D82-E9960D78030A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

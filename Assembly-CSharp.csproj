@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\ConnectionStatus.cs" />
      <Compile Include="Assets\Scripts\ConnectToPhoton.cs" />
+     <Compile Include="Assets\Scripts\ConnectToRoom.cs" />
      <Compile Include="Assets\Scripts\DistanceCalc.cs" />
      <Compile Include="Assets\Scripts\LoadTestScene.cs" />
      <Compile Include="Assets\Scripts\PositionSync.cs" />

@@ -44,17 +44,14 @@ public class PositionSync : MonoBehaviour, IPunObservable
 
     void IPunObservable.OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
+
         if (stream.IsWriting)
         {
-
-            Debug.Log("Sending mine");
-
             stream.SendNext(MyPositionFromTarget());
             stream.SendNext(transform.rotation);
         }
         else
         {
-            Debug.Log("Receiving others");
             networkPosition = (Vector3)stream.ReceiveNext();
             networkRotation = (Quaternion)stream.ReceiveNext();
         }
@@ -62,49 +59,38 @@ public class PositionSync : MonoBehaviour, IPunObservable
 
     void FixedUpdate()
     {
+
         if (!PhotonView.IsMine)
         {
-            Debug.Log("IsNotMine");
-
             transform.localPosition = calcNewNetworkPos(networkPosition);
             transform.localRotation = networkRotation;
-
-            Debug.Log(networkPosition);
         }
 
         if (PhotonView.IsMine && isPerson)
         {
-            Debug.Log("IsMine");
 
             transform.position = ARCamera.transform.position;
             transform.rotation = ARCamera.transform.rotation;
-
-            Debug.Log(transform.position);
-
         }
     }
 
     private Vector3 GetMyTargetPosition()
     {
-        var imageTarget = GameObject.Find("ImageTarget");
+        var imageTarget = transform.parent.gameObject;
         var targetTransform = imageTarget.GetComponent<Transform>();
         Vector3 targetPosition = targetTransform.position;
-        Debug.Log("TargetPosition: " + targetPosition);
         return targetPosition;
     }
 
     private Vector3 MyPositionFromTarget()
     {
         Vector3 newVector = ImageTargetVector - ARCamera.transform.position;
-        Debug.Log("PositionFromTarget: " + newVector);
         return newVector;
     }
 
     private Vector3 calcNewNetworkPos(Vector3 RecievedVector)
     {
         Vector3 normalisedVector = ImageTargetVector - RecievedVector;
-        Debug.Log("Normalised: " + normalisedVector);
-
         return normalisedVector;
     }
 

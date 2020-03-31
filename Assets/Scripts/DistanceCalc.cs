@@ -19,7 +19,7 @@ public class DistanceCalc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isTracking("ImageTarget") && !playerCreated)
+        if (isTracking("PALImageTarget") && !playerCreated)
         {
             playerCreated = true;
             GameObject player = PhotonNetwork.Instantiate(Path.Combine("Prefabs", "PhotonPlayer"), Vector3.zero, Quaternion.identity);
