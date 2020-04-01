@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhotonWebSocket", "PhotonWe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.MixedReality.Toolkit.Services.BoundarySystem", "Microsoft.MixedReality.Toolkit.Services.BoundarySystem.csproj", "{A6420E2A-3371-4B74-BC35-2FF3886787C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests.csproj", "{3AC6C44B-7DBB-8455-6971-67E35A7C3759}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.MixedReality.Toolkit.SDK.Inspectors", "Microsoft.MixedReality.Toolkit.SDK.Inspectors.csproj", "{D757A79F-25F6-1BC7-F3CD-CB4B2304848C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.MixedReality.Toolkit.Editor.Inspectors", "Microsoft.MixedReality.Toolkit.Editor.Inspectors.csproj", "{877E63C4-02D1-1D5B-4B36-219796AD5E35}"
@@ -94,8 +96,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.MixedReality.Toolkit.Providers.WindowsMixedReality.Editor", "Microsoft.MixedReality.Toolkit.Providers.WindowsMixedReality.Editor.csproj", "{28EDBB20-94AC-2CA9-F9E3-ED5901C8ED7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.MixedReality.Toolkit.Services.InputSystem.Editor", "Microsoft.MixedReality.Toolkit.Services.InputSystem.Editor.csproj", "{E167D1AC-0636-3854-4D82-E9960D78030A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests.csproj", "{3AC6C44B-7DBB-8455-6971-67E35A7C3759}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -203,6 +203,10 @@ Global
 		{A6420E2A-3371-4B74-BC35-2FF3886787C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A6420E2A-3371-4B74-BC35-2FF3886787C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A6420E2A-3371-4B74-BC35-2FF3886787C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D757A79F-25F6-1BC7-F3CD-CB4B2304848C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D757A79F-25F6-1BC7-F3CD-CB4B2304848C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D757A79F-25F6-1BC7-F3CD-CB4B2304848C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -291,10 +295,6 @@ Global
 		{E167D1AC-0636-3854-4D82-E9960D78030A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E167D1AC-0636-3854-4D82-E9960D78030A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E167D1AC-0636-3854-4D82-E9960D78030A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3AC6C44B-7DBB-8455-6971-67E35A7C3759}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
