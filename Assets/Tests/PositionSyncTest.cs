@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
@@ -24,6 +24,6 @@ namespace Tests
             // Use yield to skip a frame.
             yield return null;
         }
-        public void 
-    }
+		
+	}
 }
